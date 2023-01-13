@@ -52,3 +52,8 @@ fig = plt.figure(figsize=(15, 5))
 sns.lineplot(data=df_resultado)
 plt.show()
 print(df_resultado)
+
+importancia_features = pd.DataFrame(rf_reg.feature_importances_, x_train.columns)
+plt.figure(figsize=(5, 5))
+sns.barplot(x=importancia_features.index, y=importancia_features[0])
+plt.show()
